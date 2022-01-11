@@ -18,9 +18,10 @@ app.get('/api/products', (req, res) => {
 })
 app.get('/api/products/:productID', (req, res) => {
   // console.log(req)
-  // console.log(req.params)
-  const { productID } = req.params
+  // console.log(req.params)  => { productId: "1" } always return string
 
+  const { productID } = req.params
+ 
   const singleProduct = products.find(
     (product) => product.id === Number(productID)
   )
@@ -32,9 +33,11 @@ app.get('/api/products/:productID', (req, res) => {
 })
 
 app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
-  console.log(req.params)
+  console.log(req.params) //=> { productId: '4', reviewId: "abc" }
   res.send('hello world')
 })
+
+// url parameter
 
 app.get('/api/v1/query', (req, res) => {
   // console.log(req.query)
