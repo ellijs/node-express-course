@@ -5,6 +5,7 @@ const path = require('path')
 const app = express()
 
 // setup static and middleware
+// server doesn't need to change, express will take care of everything
 app.use(express.static('./public'))
 
 app.get('/', (req, res) => {
