@@ -1,4 +1,5 @@
 const express = require('express')
+// import path module - absolute path
 const path = require('path')
 
 const app = express()
