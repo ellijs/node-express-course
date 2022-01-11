@@ -9,6 +9,7 @@ const authorize = require('./authorize')
 
 app.use([logger, authorize]) // execute multiple middleware function [] // 순서에 따라 실행된다. 
 
+
 // api/home/about/products
 app.get('/', (req, res) => {
   res.send('Home')
@@ -19,7 +20,7 @@ app.get('/about', (req, res) => {
 app.get('/api/products', (req, res) => {
   res.send('Products')
 })
-app.get('/api/items', (req, res) => {
+app.get('/api/items', [logger, authorize], (req, res) => {
   console.log(req.user)
   res.send('Items')
 })
