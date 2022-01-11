@@ -3,6 +3,10 @@ const app = express()
 const logger = require('./logger')
 const authorize = require('./authorize')
 //  req => middleware => res
+// app.use(logger) => 'use' invoke this to all routes
+// app.use only works 이것보다 아래에 있는것만.
+// app.use('/api', logger) => 'use' invoke this to any '/api' route
+
 app.use([logger, authorize])
 // api/home/about/products
 app.get('/', (req, res) => {
