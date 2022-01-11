@@ -1,5 +1,13 @@
 // use http module
 const http = require('http')
+// use fs module
+const { readFileSync } = require('fs')
+
+
+
+// get all files
+const homePage = readFileSync('./index.html')
+
 
 // creating server
 const server = http.createServer((req, res) => {
@@ -11,7 +19,8 @@ const server = http.createServer((req, res) => {
     // Home Page
     if ( url === '/') {
         res.writeHead(200, {'Content-type' : 'text/html'})
-        res.write('<h1>home page</h1>')
+        // res.write('<h1>home page</h1>')
+        res.write(homePage)
         res.end()
     }
     // About Page 
