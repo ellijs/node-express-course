@@ -40,7 +40,10 @@ app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
 // url parameter
 
 app.get('/api/v1/query', (req, res) => {
-  // console.log(req.query)
+  //  /query?search=a&limit=2  => return include 'a' and limit 2
+  // /query?name=john&id=4
+  // console.log(req.query)  =>  { name: 'john', id: '4' }
+  
   const { search, limit } = req.query
   let sortedProducts = [...products]
 
