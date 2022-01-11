@@ -43,7 +43,7 @@ app.get('/api/v1/query', (req, res) => {
   //  /query?search=a&limit=2  => return include 'a' and limit 2
   // /query?name=john&id=4
   // console.log(req.query)  =>  { name: 'john', id: '4' }
-  
+
   const { search, limit } = req.query
   let sortedProducts = [...products]
 
@@ -61,6 +61,9 @@ app.get('/api/v1/query', (req, res) => {
   }
   res.status(200).json(sortedProducts)
 })
+
+// always setting up condition, you need to 'return'!!!
+// not query seperated. put those in same callback
 
 
 
