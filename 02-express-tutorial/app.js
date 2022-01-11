@@ -10,3 +10,7 @@ const server = http.createServer((req, res) => {
 
 // setting up port 
 server.listen(5000)
+
+
+// MIME Types - MDN
+// Status Code - MDN
